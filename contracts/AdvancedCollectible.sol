@@ -10,7 +10,7 @@ contract AdvancedCollectible is ERC721URIStorage, VRFConsumerBase {
     uint256 internal fee;
     uint256 public counter;
     mapping(bytes32 => address) requestIdToSender;
-    mapping(uint256 => Breed) tokenIdToBreed;
+    mapping(uint256 => Breed) public tokenIdToBreed;
 
     event requestedCollectible(bytes32 indexed requestId, address requester);
     event breedAssigned(uint256 indexed tokenId, Breed breed);
