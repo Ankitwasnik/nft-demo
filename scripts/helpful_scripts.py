@@ -1,9 +1,16 @@
+from webbrowser import get
 from brownie import accounts, network, config, LinkToken, VRFCoordinatorMock, Contract
 from web3 import Web3
 
 OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["hardhat",
                                  "development", "ganache", "mainnet-fork"]
+
+BREED_MAPPING = {0: "PUG", 1: "SHIBA_INU", 2: "ST_BERNARD"}
+
+
+def get_breed(breed_number):
+    return BREED_MAPPING.get(breed_number)
 
 
 def get_account(index=None, id=None):
